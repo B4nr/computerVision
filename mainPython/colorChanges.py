@@ -13,7 +13,7 @@ width = 4
 height = 2
 testImage = numpy.zeros((height,width,3), numpy.uint8)
 testImage[:,0:width//2] = (255,0,0)      # (B, G, R)
-testImage[:,width//2:width] = (0,255,0)
+testImage[:,width//2:width] = (255,0,0)
 
 def manualGrayScaleConverterG2G(img, constant):
     (row, col) = img.shape[0:2]
@@ -22,13 +22,14 @@ def manualGrayScaleConverterG2G(img, constant):
             img[x,y] = sum(img[x, y]) * constant #this constant better be 1/3
     return img
 
-b = 0.5
+b = 1
 g = 1
 r = 1
 
 matrix  = [b, g, r]
 def manualGrayScaleConverterMe(img, cons):
     (row, col) = img.shape[0:2]
+    imgPlaceholder = [0, 0, 0]
     for x in range(row):
         for y in range(col):
             img[x, y] = img [x, y] * cons
@@ -36,16 +37,14 @@ def manualGrayScaleConverterMe(img, cons):
             print(str(x)+str(y))
     return img
 
-def generateFrame(leImg):
-    #for x in range(0, 100, 1):
-    leImg = manualGrayScaleConverterMe(leImg, [1, 1, 1])
+def generateAnim(leImg):
+    for x in range(0, 5, 1):
+        print("RESULT #"+str(x))
+        leImg = manualGrayScaleConverterMe(leImg, [x, 1, 1])
+        cv2.imwrite(outputPath+str(x)+".png", leImg)
     return leImg
 
-imageFade = manualGrayScaleConverterMe(testImage, matrix)
-cv2.imwrite(outputPath+str(0)+".png", imageFade)
-
-imageBanr = manualGrayScaleConverterMe(image, matrix)
-cv2.imwrite(outputPath+str(1)+".png", imageBanr)
+generateAnim(testImage)
 
 '''for x in range(1, 2, 1):
     cv2.imshow('bozo', manualGrayScaleConverterMe(image, [1,0.3,1]))
