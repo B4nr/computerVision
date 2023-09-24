@@ -3,9 +3,17 @@ import os
 import numpy
 
 path = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\input\macaVermelha.jpg"
+outputPath = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\output\\"
+
 
 image = cv2.imread(path)
 grayImage = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+width = 4
+height = 2
+testImage = numpy.zeros((height,width,3), numpy.uint8)
+testImage[:,0:width//2] = (255,0,0)      # (B, G, R)
+testImage[:,width//2:width] = (0,255,0)
 
 def manualGrayScaleConverterG2G(img, constant):
     (row, col) = img.shape[0:2]
@@ -14,30 +22,30 @@ def manualGrayScaleConverterG2G(img, constant):
             img[x,y] = sum(img[x, y]) * constant #this constant better be 1/3
     return img
 
-b = 3
-g = 0
-r = 0
+b = 1
+g = 1
+r = 1
 
 matrix  = [b, g, r]
 def manualGrayScaleConverterMe(img, cons):
     (row, col) = img.shape[0:2]
     for x in range(row):
-        #numpy.savetxt('r1.txt', img[x])
+        numpy.savetxt('r1.txt', img[x])
+        file = open('r1.txt', 'w')
+        file.write('DONE'+str(x))
         img[x] = img [x] * cons
-        #numpy.savetxt('r2.txt', img[x])
+        numpy.savetxt('r1.txt', img[x])
+        file.close()
     return img
 
-def generateFrame(leImg, m):
+def generateFrame(leImg):
     #for x in range(0, 100, 1):
-    leImg = manualGrayScaleConverterMe(leImg, [1, x/100, 1])
-    cv2.imwrite(str(m)+".png", leImg)
+    leImg = manualGrayScaleConverterMe(leImg, [1, 1, 1])
+    return leImg
 
-for x in range(100, 0, -1):
-    generateFrame(image, x)
+imageFade = manualGrayScaleConverterMe(testImage, matrix)
+cv2.imwrite(outputPath+str(0)+".png", imageFade)
 
-
-
-generateFrame(image, 1)
 '''for x in range(1, 2, 1):
     cv2.imshow('bozo', manualGrayScaleConverterMe(image, [1,0.3,1]))
     cv2.waitKey(0)
