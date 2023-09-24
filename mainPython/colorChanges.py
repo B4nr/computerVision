@@ -22,7 +22,7 @@ def manualGrayScaleConverterG2G(img, constant):
             img[x,y] = sum(img[x, y]) * constant #this constant better be 1/3
     return img
 
-b = 1
+b = 0.5
 g = 1
 r = 1
 
@@ -30,12 +30,10 @@ matrix  = [b, g, r]
 def manualGrayScaleConverterMe(img, cons):
     (row, col) = img.shape[0:2]
     for x in range(row):
-        numpy.savetxt('r1.txt', img[x])
-        file = open('r1.txt', 'w')
-        file.write('DONE'+str(x))
-        img[x] = img [x] * cons
-        numpy.savetxt('r1.txt', img[x])
-        file.close()
+        for y in range(col):
+            img[x, y] = img [x, y] * cons
+            print(img[x, y])
+            print(str(x)+str(y))
     return img
 
 def generateFrame(leImg):
@@ -45,6 +43,9 @@ def generateFrame(leImg):
 
 imageFade = manualGrayScaleConverterMe(testImage, matrix)
 cv2.imwrite(outputPath+str(0)+".png", imageFade)
+
+imageBanr = manualGrayScaleConverterMe(image, matrix)
+cv2.imwrite(outputPath+str(1)+".png", imageBanr)
 
 '''for x in range(1, 2, 1):
     cv2.imshow('bozo', manualGrayScaleConverterMe(image, [1,0.3,1]))
