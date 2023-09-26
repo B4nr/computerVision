@@ -29,22 +29,23 @@ r = 1
 matrix  = [b, g, r]
 def manualGrayScaleConverterMe(img, cons):
     (row, col) = img.shape[0:2]
-    imgPlaceholder = [0, 0, 0]
+    imgPlaceholder = img
     for x in range(row):
         for y in range(col):
             imgPlaceholder = img [x, y] * cons
-            print(img[x, y])
-            print(str(x)+str(y))
+            #cv2.imwrite(outputPath+str(y)+".png", imgPlaceholder)
+            #print(img[x, y])
+            #print(str(x)+str(y))
     return imgPlaceholder
 
 def generateAnim(leImg):
-    for x in range(0, 5, 1):
-        print("RESULT #"+str(x))
+    for x in range(0, 1, 1):
+        #print("RESULT #"+str(x))
         leImg = manualGrayScaleConverterMe(leImg, [x, 1, 1])
         cv2.imwrite(outputPath+str(x)+".png", leImg)
     return leImg
 
-generateAnim(testImage)
+generateAnim(image)
 
 '''for x in range(1, 2, 1):
     cv2.imshow('bozo', manualGrayScaleConverterMe(image, [1,0.3,1]))
