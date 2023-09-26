@@ -32,10 +32,10 @@ def manualGrayScaleConverterMe(img, cons):
     imgPlaceholder = [0, 0, 0]
     for x in range(row):
         for y in range(col):
-            img[x, y] = img [x, y] * cons
+            imgPlaceholder = img [x, y] * cons
             print(img[x, y])
             print(str(x)+str(y))
-    return img
+    return imgPlaceholder
 
 def generateAnim(leImg):
     for x in range(0, 5, 1):
