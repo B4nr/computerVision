@@ -7,5 +7,8 @@ outputPath = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\out
 
 image = cv2.imread(path)
 
-def generateFrame(ammount, function):
+def generateFrame(ammount, entry):
     for x in range(ammount):
+        cv2.imwrite(outputPath+"brighter\\"+str(x)+".png", cg.lighter(entry, x/ammount))
+
+generateFrame(180, image)
