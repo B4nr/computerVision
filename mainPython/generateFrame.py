@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-import colorChange as cg
+import imageProcessing as cg
 
 path = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\input\macaVermelha.jpg"
 outputPath = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\output\\"
