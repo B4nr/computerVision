@@ -1,7 +1,7 @@
 import cv2
 import os
 import numpy
-
+#this is deprecated
 path = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\input\macaVermelha.jpg"
 outputPath = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\output\\"
 
