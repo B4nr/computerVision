@@ -1,17 +1,17 @@
 import cv2
 
-class MobileCamera:
-    def getVideo(self, camera):
-        self.camera = camera
-        cap = cv2.VideoCapture(self.camera)
-        while True:
-            ret, frame = cap.read()
-            frame = cv2.resize(frame, (0,0), fx = 0.50, fy = 0.50)
-            cv2.imshow("MOBILE CAMERA", frame)
-            if cv2.waitKey(1) == ord('q'):
-                break
-            cap.release()
-            cv2.destroyAllWindows()
+cap = cv2.VideoCapture('http://192.168.1.9:8080/video')
+while True:
+    ret, img = cap.read()
+    
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    blur = cv2.GaussianBlur(gray, (5, 5), 0)
+    canny = cv2.Canny(blur, 10, 70)
+    ret, mask = cv2.threshold(canny, 70, 255, cv2.THRESH_BINARY)    
+    cv2.imshow('Video feed', mask)
+    
+    if cv2.waitKey(1) == 13:
+        break
 
-cam = MobileCamera()
-cam.getVideo("http://192.168.1.9:8080/video")
+cap.release()
+cv2.destroyAllWindows()
