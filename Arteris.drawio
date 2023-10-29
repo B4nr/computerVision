@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-29T22:10:18.383Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="-zVtny8zom91NglwqP8N" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-29T22:12:07.861Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="7uo6d1ES3nVtqfz4IuLs" version="22.0.8" type="github">
   <diagram name="Page-1" id="2ftNx5encFUPUvh2eLUS">
     <mxGraphModel dx="783" dy="503" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -31,7 +31,7 @@
         <mxCell id="fu_VMSiZrguRrlnfRBKY-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fu_VMSiZrguRrlnfRBKY-13" target="fu_VMSiZrguRrlnfRBKY-19">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="fu_VMSiZrguRrlnfRBKY-13" value="OBTER VALORES DE BRILHO PARA CADA COR" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
+        <mxCell id="fu_VMSiZrguRrlnfRBKY-13" value="OBTER VALORES DE REFLETÂNCIA PARA CADA COR" style="whiteSpace=wrap;html=1;fillColor=#1ba1e2;fontColor=#ffffff;strokeColor=#006EAF;" vertex="1" parent="1">
           <mxGeometry x="400" y="580" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="fu_VMSiZrguRrlnfRBKY-27" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fu_VMSiZrguRrlnfRBKY-19" target="fu_VMSiZrguRrlnfRBKY-26">
