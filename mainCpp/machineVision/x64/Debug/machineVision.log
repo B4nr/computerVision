@@ -1,0 +1,5 @@
+﻿  machineVision.cpp
+C:\Users\Rodrigo\Documents\GitHub\computerVision\mainCpp\machineVision\machineVision.cpp(11,21): error C2440: '=': cannot convert from 'char [260]' to 'LPWSTR'
+C:\Users\Rodrigo\Documents\GitHub\computerVision\mainCpp\machineVision\machineVision.cpp(11,21): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+C:\Users\Rodrigo\Documents\GitHub\computerVision\mainCpp\machineVision\machineVision.cpp(14,23): error C2440: '=': cannot convert from 'const char [21]' to 'LPCWSTR'
+C:\Users\Rodrigo\Documents\GitHub\computerVision\mainCpp\machineVision\machineVision.cpp(14,23): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
