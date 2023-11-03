@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 np.set_printoptions(threshold=sys.maxsize)
 
-path = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\input\\tarefaComprimidos\\cart_012.jpg"
+path = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\input\\tarefaComprimidos\\cart_008.jpg"
 outputPath = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\output\\"
 
 onlyFans = cv2.imread(path)
@@ -30,11 +30,14 @@ moreTotal = 0
 for x in total:
     moreTotal = moreTotal+x
 
+print(moreTotal)
 trueValue = moreTotal/407581.071429
+leastSquaresMethod = (moreTotal*(2.43300316939823*10**(-6)))
+print(leastSquaresMethod)
 
 #print(trueValue)
 
 #plt.imshow(segmentedImage)
-plt.text(1, 35, str("Quantidade de Remedios: "+str(trueValue)))
+plt.text(1, 35, str("Quantidade de Remedios: "+str(round(leastSquaresMethod))))
 plt.imshow(onlyFans)
 plt.show()
