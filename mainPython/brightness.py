@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 np.set_printoptions(threshold=sys.maxsize)
 
-path = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\input\\tarefaComprimidos\\cart_008.jpg"
+path = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\input\\tarefaComprimidos\\cart_011.jpg"
 outputPath = "C:\\Users\\Rodrigo\\Documents\\GitHub\\computerVision\\images\\output\\"
 
 onlyFans = cv2.imread(path)
